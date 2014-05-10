@@ -2,18 +2,21 @@ FORMAT: 1A
 HOST: https://api.shrikeh.net
 
 # Army builder
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+Army builder API is a *short texts saving* service similar to its physical paper presence on your table.
 
 
 # Group Faction
 Faction related resources of the **Factions API**
 
-## Factions Collection [/factions]
+## Factions Collection [{game}/factions]
 ### List all Factions [GET]
 + Response 200 (application/hal+json)
++ Parameters
+    + game (required, game, `infinity`) ... String `game` of the Game to query for factions. Has example value.
+    
     + Headers
     
-            Link: <https://infinity.shrikeh.net/factions>;rel="self"
+            Link: <https://api.shrikeh.net/infinity/factions>;rel="self"
     + Body          
     
             [{
@@ -94,7 +97,7 @@ Faction related resources of the **Factions API**
         { "id": 3, "title": "Buy cheese and bread for breakfast." }
 
 ## Note [/factions/{faction}]
-A single Note object with all its details
+A single Faction object with all its details
 
 + Parameters
     + faction (required, faction, `haqqislam`) ... String `faction` of the Faction to perform action with. Has example value.
