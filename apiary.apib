@@ -1,0 +1,113 @@
+FORMAT: 1A
+HOST: https://infinity.shrikeh.net
+
+# Infinity Game
+Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+
+# Group Faction
+Faction related resources of the **Factions API**
+
+## Factions Collection [/factions]
+### List all Factions [GET]
++ Response 200 (application/hal+json)
+    + Headers
+    
+            Link: <https://infinity.shrikeh.net/factions>;rel="self"
+    + Body          
+    
+            [{
+                "name": "Human Sphere",
+                
+                "_links": {
+                    "self": {
+                        "href": "/factions/human-sphere"
+                    },
+                    "children": [{
+                        "href": "/factions/haqqislam"
+                        "name": "Haqqislam",
+                        "logo": "haqqislam.png"
+                    },
+                    {
+                        "href": "/factions/panoceania"
+                        "name": "PanOceania",
+                        "logo": "panoceania.png"
+                    },
+                    {
+                        "href": "/factions/aleph"
+                        "name": "Aleph",
+                        "logo": "aleph.png"
+                    },
+                    {
+                        "href": "/factions/yu-jing"
+                        "name": "Yu Jing",
+                        "logo": "yu-jing.png"
+                    },
+                    {
+                        "href": "/factions/ariadna"
+                        "name": "Ariadna",
+                        "logo": "ariadna.png"
+                    }]
+                }
+            },
+            {
+                "name": "Combined Army",
+                "_links": {
+                    "self": {
+                        "href": "/factions/combined-army"
+                    }
+                },
+                "_embedded": {
+                    "armies": [{
+                        "_links": {
+                            "self": {
+                                "href": "/factions/combined-army/armies"
+                            },
+                        }
+                    }]
+                }
+            },
+            {
+                "name": Tohaa",
+                "_links": {
+                    "self": {
+                    "href": "/factions/tohaa"
+                },
+                "_embedded": {
+                    "armies": [{
+                        "_links": {
+                            "self": {
+                                "href": "/factions/tohaa/armies"
+                            },
+                        }
+                    }]
+                }
+            }]
+
+### Create a Faction [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/hal+json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## Note [/factions/{faction}]
+A single Note object with all its details
+
++ Parameters
+    + faction (required, faction, `haqqislam`) ... String `faction` of the Faction to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/hal+json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Note [DELETE]
++ Response 204
