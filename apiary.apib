@@ -24,30 +24,30 @@ Faction related resources of the **Factions API**
                 
                 "_links": {
                     "self": {
-                        "href": "/factions/human-sphere"
+                        "href": "/infinity/factions/human-sphere"
                     },
                     "children": [{
-                        "href": "/factions/haqqislam"
+                        "href": "/infinity/factions/haqqislam"
                         "name": "Haqqislam",
                         "logo": "haqqislam.png"
                     },
                     {
-                        "href": "/factions/panoceania"
+                        "href": "/infinity/factions/panoceania"
                         "name": "PanOceania",
                         "logo": "panoceania.png"
                     },
                     {
-                        "href": "/factions/aleph"
+                        "href": "/infinity/factions/aleph"
                         "name": "Aleph",
                         "logo": "aleph.png"
                     },
                     {
-                        "href": "/factions/yu-jing"
+                        "href": "/infinity/factions/yu-jing"
                         "name": "Yu Jing",
                         "logo": "yu-jing.png"
                     },
                     {
-                        "href": "/factions/ariadna"
+                        "href": "/infinity/factions/ariadna"
                         "name": "Ariadna",
                         "logo": "ariadna.png"
                     }]
@@ -57,14 +57,14 @@ Faction related resources of the **Factions API**
                 "name": "Combined Army",
                 "_links": {
                     "self": {
-                        "href": "/factions/combined-army"
+                        "href": "/infinity/factions/combined-army"
                     }
                 },
                 "_embedded": {
                     "armies": [{
                         "_links": {
                             "self": {
-                                "href": "/factions/combined-army/armies"
+                                "href": "/infinity/factions/combined-army/armies"
                             },
                         }
                     }]
@@ -74,13 +74,13 @@ Faction related resources of the **Factions API**
                 "name": Tohaa",
                 "_links": {
                     "self": {
-                    "href": "/factions/tohaa"
+                    "href": "/infinity/factions/tohaa"
                 },
                 "_embedded": {
                     "armies": [{
                         "_links": {
                             "self": {
-                                "href": "/factions/tohaa/armies"
+                                "href": "/infinity/factions/tohaa/armies"
                             },
                         }
                     }]
@@ -96,11 +96,12 @@ Faction related resources of the **Factions API**
 
         { "id": 3, "title": "Buy cheese and bread for breakfast." }
 
-## Note [/factions/{faction}]
+## Note [{game}/factions/{faction}]
 A single Faction object with all its details
 
 + Parameters
-    + faction (required, faction, `haqqislam`) ... String `faction` of the Faction to perform action with. Has example value.
+    + game (required, game, `dust-warfare`) ... String `game` of the Game to query for factions. Has example value.
+    + faction (required, faction, `ssu`) ... String `faction` of the Faction to perform action with. Has example value.
 
 ### Retrieve a Note [GET]
 + Response 200 (application/hal+json)
